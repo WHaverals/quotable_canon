@@ -1,0 +1,2 @@
+exports/*.parquet filter=lfs diff=lfs merge=lfs -text
+exports/model/*.parquet filter=lfs diff=lfs merge=lfs -text
