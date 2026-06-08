@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@6"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@6.4.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@7"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300, "strokeWidth": 0}}, "layer": [{"data": {"name": "data-cab89ea18155dec7d772e8112aba6047"}, "mark": {"type": "rule", "color": "black", "opacity": 0.65, "strokeDash": [4, 3]}, "encoding": {"x": {"field": "x", "scale": {"domain": [-0.23957563628007109, 0.23957563628007109]}, "type": "quantitative"}}}, {"data": {"name": "data-9b52988ce01bc6ff63c3567b73e1f968"}, "mark": {"type": "bar"}, "encoding": {"color": {"condition": {"test": "(datum.mean_slope > 0)", "value": "#c45200"}, "value": "#154e8a"}, "tooltip": [{"field": "ch_period", "title": "Chadwyck period", "type": "nominal"}, {"field": "n_poems", "title": "Poems", "type": "quantitative"}, {"field": "mean_slope", "format": ".3f", "title": "Mean slope", "type": "quantitative"}, {"field": "median_slope", "format": ".3f", "title": "Median slope", "type": "quantitative"}, {"field": "q25_slope", "format": ".3f", "title": "25th percentile", "type": "quantitative"}, {"field": "q75_slope", "format": ".3f", "title": "75th percentile", "type": "quantitative"}, {"field": "frac_significant", "format": ".0%", "title": "Share individually significant", "type": "quantitative"}, {"field": "mean_works", "format": ".0f", "title": "Mean lifetime works", "type": "quantitative"}, {"field": "total_works", "format": ".0f", "title": "Total lifetime works", "type": "quantitative"}], "x": {"field": "mean_slope", "scale": {"domain": [-0.23957563628007109, 0.23957563628007109]}, "title": "Mean poem-level Bayesian slope (log-odds per decade)", "type": "quantitative"}, "y": {"axis": {"labelLimit": 340}, "field": "period_short", "sort": null, "title": null, "type": "nominal"}}}, {"data": {"name": "data-9b52988ce01bc6ff63c3567b73e1f968"}, "mark": {"type": "rule", "color": "black", "strokeWidth": 1.4}, "encoding": {"x": {"field": "q25_slope", "scale": {"domain": [-0.23957563628007109, 0.23957563628007109]}, "type": "quantitative"}, "x2": {"field": "q75_slope"}, "y": {"field": "period_short", "sort": null, "type": "nominal"}}}, {"data": {"name": "data-9b52988ce01bc6ff63c3567b73e1f968"}, "mark": {"type": "point", "color": "black", "filled": true, "size": 34}, "encoding": {"x": {"field": "median_slope", "scale": {"domain": [-0.23957563628007109, 0.23957563628007109]}, "type": "quantitative"}, "y": {"field": "period_short", "sort": null, "type": "nominal"}}}, {"data": {"name": "data-9b52988ce01bc6ff63c3567b73e1f968"}, "mark": {"type": "text", "align": "center", "baseline": "middle", "color": "#555", "fontSize": 10}, "encoding": {"text": {"field": "n_label", "type": "nominal"}, "x": {"field": "label_x", "scale": {"domain": [-0.23957563628007109, 0.23957563628007109]}, "type": "quantitative"}, "y": {"field": "period_short", "sort": null, "type": "nominal"}}}], "height": 270, "title": {"text": "Mean poem-level prevalence trend by Chadwyck period (n >= 20)", "subtitle": "Bars = mean posterior-mean poem slope; black whiskers = interquartile range; black dots = median; labels show modeled poems per period"}, "width": 580, "$schema": "https://vega.github.io/schema/vega-lite/v6.4.1.json", "datasets": {"data-cab89ea18155dec7d772e8112aba6047": [{"x": 0.0}], "data-9b52988ce01bc6ff63c3567b73e1f968": [{"ch_period": "Middle English Poetry 1100-1400", "n_poems": 23, "mean_slope": 0.09177340776682605, "median_slope": 0.10530267403479723, "q25_slope": 0.05283677427206275, "q75_slope": 0.11465019605148856, "frac_significant": 0.6086956521739131, "mean_works": 78.6086956521739, "total_works": 1808, "period_short": "Middle English Poetry 1100-1400", "n_label": "n=23", "label_x": 0.1252980021083806}, {"ch_period": "Miscellanies and Collections 1550-1900", "n_poems": 92, "mean_slope": 0.039452942388378036, "median_slope": 0.04087670323509517, "q25_slope": -0.016553342619073912, "q75_slope": 0.0995653740848082, "frac_significant": 0.5217391304347826, "mean_works": 86.78260869565217, "total_works": 7984, "period_short": "Miscellanies and Collections 1550-1900", "n_label": "n=92", "label_x": 0.11021318014170024}, {"ch_period": "Early Nineteenth-Century 1800-1834", "n_poems": 209, "mean_slope": 0.02902147290460011, "median_slope": 0.027001678483630144, "q25_slope": -0.019075233408911135, "q75_slope": 0.08260366178245067, "frac_significant": 0.3062200956937799, "mean_works": 87.87081339712918, "total_works": 18365, "period_short": "Early Nineteenth-Century 1800-1834", "n_label": "n=209", "label_x": 0.09325146783934271}, {"ch_period": "Tudor 1500-1580", "n_poems": 43, "mean_slope": 0.024572037923545814, "median_slope": 0.030986008982305, "q25_slope": -0.013910481934994508, "q75_slope": 0.07034512665331186, "frac_significant": 0.27906976744186046, "mean_works": 57.97674418604651, "total_works": 2493, "period_short": "Tudor 1500-1580", "n_label": "n=43", "label_x": 0.0809929327102039}, {"ch_period": "Mid Nineteenth-Century 1835-1869", "n_poems": 59, "mean_slope": 0.012803358499263841, "median_slope": 0.004875571592769735, "q25_slope": -0.03985303997154269, "q75_slope": 0.066275860591213, "frac_significant": 0.23728813559322035, "mean_works": 83.98305084745763, "total_works": 4955, "period_short": "Mid Nineteenth-Century 1835-1869", "n_label": "n=59", "label_x": 0.07692366664810504}, {"ch_period": "Jacobean and Caroline 1603-1660", "n_poems": 65, "mean_slope": 0.0025996512054327512, "median_slope": 0.005634705635530441, "q25_slope": -0.05662208925951219, "q75_slope": 0.05450811208024992, "frac_significant": 0.4153846153846154, "mean_works": 74.93846153846154, "total_works": 4871, "period_short": "Jacobean and Caroline 1603-1660", "n_label": "n=65", "label_x": 0.06515591813714197}, {"ch_period": "Later Eighteenth-Century 1750-1799", "n_poems": 157, "mean_slope": 0.001223650843055575, "median_slope": 0.0033593306896156244, "q25_slope": -0.04356841606599467, "q75_slope": 0.0483369911779916, "frac_significant": 0.3248407643312102, "mean_works": 75.47770700636943, "total_works": 11850, "period_short": "Later Eighteenth-Century 1750-1799", "n_label": "n=157", "label_x": 0.05898479723488365}, {"ch_period": "Early Eighteenth-Century 1700-1749", "n_poems": 114, "mean_slope": -0.07231326839131544, "median_slope": -0.07534429320333594, "q25_slope": -0.11337421030560133, "q75_slope": -0.03841473964778977, "frac_significant": 0.7280701754385965, "mean_works": 106.79824561403508, "total_works": 12175, "period_short": "Early Eighteenth-Century 1700-1749", "n_label": "n=114", "label_x": -0.12402201636249337}, {"ch_period": "Restoration 1660-1700", "n_poems": 67, "mean_slope": -0.11708908669730302, "median_slope": -0.12423582248970096, "q25_slope": -0.17746343428153413, "q75_slope": -0.054924342463742726, "frac_significant": 0.7761194029850746, "mean_works": 71.98507462686567, "total_works": 4823, "period_short": "Restoration 1660-1700", "n_label": "n=67", "label_x": -0.1881112403384262}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
