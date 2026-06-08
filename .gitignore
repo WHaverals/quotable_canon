@@ -54,6 +54,9 @@ prev_df.csv
 
 # Large reference / Passim inputs — not distributed with this repo (see README)
 data/
+
+# Full posterior (~1.2 GB) — regenerate with notebook 03 (see README)
+exports/model/bambi_idata.nc
 *.cover
 *.py.cover
 .hypothesis/
