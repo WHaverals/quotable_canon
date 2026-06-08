@@ -25,7 +25,7 @@ from pathlib import Path
 from typing import Mapping
 
 CHADWYCK_TEXT_DIRNAME = "chadwyckhealey"
-PASSIM_DATASET_DIRNAME = "ppa found poems dataset - 2026-03 revised"
+PASSIM_DATASET_DIRNAME = "ppa_found_poems"
 
 
 def find_repo_root(start: Path | None = None) -> Path:
@@ -58,7 +58,7 @@ MODEL_DIR = EXPORTS_DIR / "model"
 CACHE_DIR = REPO_ROOT / ".cache"
 
 CHADWYCK_TEXT_DIR = DATA_DIR / CHADWYCK_TEXT_DIRNAME
-PASSIM_DATA_DIR = DATA_DIR / PASSIM_DATASET_DIRNAME / "data"
+PASSIM_DATA_DIR = DATA_DIR / PASSIM_DATASET_DIRNAME
 POETRY_METADATA_PATH = DATA_DIR / "poetry_metadata.csv"
 INTERNET_POEMS_METADATA_PATH = (
     DATA_DIR / "internet_poems" / "internet_poems_metadata_enriched.csv"
