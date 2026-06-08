@@ -1,0 +1,37 @@
+# Reproducible conda environment for the quotable_canon notebook series.
+#
+#   conda env create -f environment.yml
+#   conda activate quotable-canon
+#   python -m ipykernel install --user --name quotable-canon --display-name "quotable-canon"
+#
+# Run notebooks with cwd = repository root and select the quotable-canon kernel.
+# (mamba works too and is often faster, but is not required.)
+
+name: quotable-canon
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - polars>=1.29,<2
+  - pandas>=2.3
+  - numpy>=2.2
+  - pyarrow>=22
+  - altair>=5.5
+  - statsmodels>=0.14
+  - patsy>=1.0
+  - scipy>=1.15
+  - bambi=0.17.2
+  - pymc=5.27.0
+  - arviz=0.23.1
+  - pytensor>=2.36
+  - xarray>=2025.12
+  - graphviz>=0.21
+  - h5netcdf>=1.8
+  - matplotlib>=3.10
+  - jupyterlab>=4.4
+  - ipykernel>=6.29
+  - ipython>=9.1
+  - pip
+  - pip:
+      - vl-convert-python>=1.9
+      - git+https://github.com/Princeton-CDH/corppa.git@0.4#egg=corppa
