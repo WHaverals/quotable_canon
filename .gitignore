@@ -42,9 +42,18 @@ htmlcov/
 .nox/
 .coverage
 .coverage.*
+# Notebook pipeline outputs (PyTensor / matplotlib cache)
+.cache/
 .cache
 nosetests.xml
 coverage.xml
+
+# Local debug / OS junk
+prev_df.csv
+.DS_Store
+
+# Large reference / Passim inputs — not distributed with this repo (see README)
+data/
 *.cover
 *.py.cover
 .hypothesis/
