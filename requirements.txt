@@ -29,6 +29,7 @@ graphviz==0.21
 jupyterlab==4.4.1
 ipykernel==6.29.5
 ipython==9.1.0
+ipywidgets==8.1.7
 matplotlib==3.10.1
 
 # PPA utilities — not on PyPI; pin to release tag
